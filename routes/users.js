@@ -1,10 +1,13 @@
 const express = require("express");
 const { auth } = require("../utils/index.js");
 const router = express.Router();
+// التحقق من صحة البيانات
 const { check, validationResult } = require("express-validator");
 const User = require("../models/User.js");
+// تجميد البيانات
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+// تكوين وتخزين مجموعه الاعدادات لاستخدامها بشكل متكرر
 const config = require("config");
 
 /*
